@@ -69,3 +69,25 @@ if num % 3 == 0:
     print("3의 배수입니다.")           # 3의 배수인 경우 출력 # 
 else:
     print("3의 배수가 아닙니다.")       # 3의 배수가 아닌 경우 출력 #   
+
+
+a = 50
+b = 40
+
+result = a / b
+print(result)
+
+result = a // b # 나눴을 때 몫
+print(result)
+
+result = a % b # 나누었을 때 나머지
+print(result)
+
+name = 'mike'
+print(name)
+
+city = 'seoul'
+print(city)
+
+a = 10.5
+print(a)

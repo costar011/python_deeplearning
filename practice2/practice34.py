@@ -41,6 +41,10 @@ class FlyableAttackUnit(AttackUnit, Flyable):  # 다중 상속
         AttackUnit.__init__(self, name, hp, 0, damage) # 지상 speed 0
         Flyable.__init__(self, flying_speed)
 
+    def move(self, location):
+        print("[공중 유닛 이동]")
+        self.fly(self.name, location)
+
 # 벌쳐 : 지상 유닛, 기동성이 좋음
 vulture = AttackUnit("벌쳐", 80, 10, 20)
 
@@ -48,4 +52,5 @@ vulture = AttackUnit("벌쳐", 80, 10, 20)
 battlecruiser = FlyableAttackUnit("배틀크루저", 500, 25, 3)
 
 vulture.move("11시")
-battlecruiser.fly(battlecruiser.name, "9시")  # Flyable 클래스의 fly 메소드 사용
+# battlecruiser.fly(battlecruiser.name, "9시")  # Flyable 클래스의 fly 메소드 사용
+battlecruiser.move("9시")  # FlyableAttackUnit 클래스의 move 메소드 사용

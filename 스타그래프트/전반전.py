@@ -41,7 +41,32 @@ class Marine(AttackUnit):
             else:
                 print("{0} : 체력이 부족하여 스팀팩을 사용하지 않습니다.".format(self.name))
 
-# 드랍쉽 : 공중 유닛, 수송기. 마린/ 파이어뱃/ 탱크 등을 수송. 공격 X -> 공격 유닛 클래스를 상속받지 않음
+# 탱크
+class Tank(AttackUnit):
+    # 시즈모드 : 탱크를 지상에 고정시켜, 더 높은 파워로 공격 가능, 이동 불가
+    self.seize_mode = False # 시즈모드 해제 상태
+
+    def __init__(self):
+        AttackUnit.__init__(self, "탱크", 150, 1, 35) # 체력 150, 공격속도 1, 공격력 35
+        self.seize_mode = False
+
+    def set_seize_mode(self):
+        if Tank.seize_mode == False:
+            return
+        
+        # 현재 시즈모드가 아닐 때 -> 시즈모드
+        if self.seize_mode == False:
+            print("{0} : 시즈모드로 전환합니다.".format(self.name))
+            self.damage *= 2
+            self.seize_mode = True
+
+        # 현재 시즈모드일 때 -> 시즈모드 해제
+        else:
+            print("{0} : 시즈모드를 해제합니다.".format(self.name))
+            self.damage /= 2
+            self.seize_mode = False
+
+# 날 수 있는 기능을 가진 클래스
 class Flyable:
     def __init__(self, flying_speed):
         self.flying_speed = flying_speed
@@ -58,3 +83,17 @@ class FlyableAttackUnit(AttackUnit, Flyable):  # 다중 상속
     def move(self, location):
         print("[공중 유닛 이동]")
         self.fly(self.name, location)
+
+# 레이스
+class Wraith(FlyableAttackUnit):
+    def __init__(self):
+        FlyableAttackUnit.__init__(self, "레이스", 80, 20, 5) # 체력 80, 공격력 20, 속도 5
+        self.clocked = False # 클로킹 모드 (해제 상태)
+
+    def clocking(self):
+        if self.clocked == True:
+            print("{0} : 클로킹 모드 해제합니다.".format(self.name))
+            self.clocked = False
+        else:
+            print("{0} : 클로킹 모드 설정합니다.".format(self.name))
+            self.clocked = True

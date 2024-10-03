@@ -1,5 +1,3 @@
-# pass / super() : 부모 클래스의 생성자를 호출할 때 사용
-
 from random import *
 
 # 일반 유닛
@@ -11,7 +9,6 @@ class Unit:
         print("{0} 유닛이 생성되었습니다.".format(name))
 
     def move(self, location):
-        print("[지상 유닛 이동]")
         print("{0} : {1} 방향으로 이동합니다. [속도 {2}]".format(self.name, location, self.speed))
 
     def damaged(self, damage):
@@ -83,7 +80,6 @@ class FlyableAttackUnit(AttackUnit, Flyable):  # 다중 상속
         Flyable.__init__(self, flying_speed)
 
     def move(self, location):
-        print("[공중 유닛 이동]")
         self.fly(self.name, location)
 
 # 레이스
@@ -155,3 +151,6 @@ for unit in attack_units:
 # 전군 피해
 for unit in attack_units:
     unit.damaged(randint(5, 21)) # 공격은 랜덤으로 받음 (5~20)
+
+# 게임 종료
+game_over()

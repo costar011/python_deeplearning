@@ -45,7 +45,6 @@ class FlyableAttackUnit(AttackUnit, Flyable):  # 다중 상속
         print("[공중 유닛 이동]")
         self.fly(self.name, location)
 
-
 # 건물
 class BuildingUnit(Unit):
     def __init__(self, name, hp, location):

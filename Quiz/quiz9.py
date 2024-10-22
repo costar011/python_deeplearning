@@ -28,3 +28,11 @@ while(True):
 
         waiting += 1
         chicken -= order
+
+    if chicken == 0:
+        raise SoldOutError
+    except ValueError:
+        print("잘못된 값을 입력하였습니다.")
+    except SoldOutError:
+        print("재고가 소진되어 더 이상 주문을 받지 않습니다.")
+        break

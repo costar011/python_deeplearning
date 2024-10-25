@@ -1,4 +1,4 @@
-# 모듈
+# 모듈 module
 
 # 일반 가격
 def price(people):

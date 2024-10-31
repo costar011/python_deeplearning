@@ -24,4 +24,5 @@ price(5)
 price_morning(6)
 # price_soldier(7) # 에러 발생
 
-from theater_module import price_soldier # price_soldier 함수만 사용
+from theater_module import price_soldier as price
+price(5) # 5명 군인 할인 가격으로 영화 보러 갔을 때 가격

@@ -12,5 +12,10 @@
 # from travel import *
 from travel import *
 # trip_to = vietnam.VietnamPackage()
-trip_to = travel.thailand.ThailandPackage()
-trip_to.detail() 
+# trip_to = travel.thailand.ThailandPackage()
+# trip_to.detail() 
+
+import inspect
+import random
+print(inspect.getfile(random))
+print(inspect.getfile(thailand)) # Error

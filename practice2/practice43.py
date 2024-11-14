@@ -16,3 +16,6 @@ import random # 외장 함수
 
 # lst = [1, 2, 3]
 # print(dir(lst))
+
+name = "Jim"
+print(dir(name))

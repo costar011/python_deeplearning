@@ -21,6 +21,13 @@
 #print(os.listdir()) # 현재 디렉토리의 파일 목록
 
 # time : 시간 관련 함수
-import time
-print(time.localtime())
-print(time.strftime("%Y-%m-%d %H:%M:%S"))
+# import time
+# print(time.localtime())
+# print(time.strftime("%Y-%m-%d %H:%M:%S"))
+
+import datetime
+# print("오늘 날짜는", datetime.date.today())
+# timedelta : 두 날짜 사이의 간격
+today = datetime.date.today() # 오늘 날짜 저장
+td = datetime.timedelta(days=100) # 100일 저장
+print("우리가 만난지 100일은", today + td) # 오늘부터 100일 후

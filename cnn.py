@@ -1,4 +1,3 @@
-# 필요한 라이브러리를 임포트합니다.
 import cv2  # OpenCV를 사용해 실시간 영상 처리를 담당합니다.
 import numpy as np  # 데이터 처리를 위한 NumPy 라이브러리입니다.
 from tensorflow.keras.models import Sequential  # CNN 모델 설계를 위한 Keras 모듈입니다.
@@ -63,7 +62,7 @@ def process_live_video():
         cv2.putText(frame, label, (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
 
         # 결과를 화면에 표시합니다.
-        cv2.imshow('Live Video', frame)
+        cv2.imshow('실시간 영상 처리', frame)
 
         # 'q' 키를 누르면 종료합니다.
         if cv2.waitKey(1) & 0xFF == ord('q'):
